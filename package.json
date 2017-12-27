@@ -19,11 +19,14 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "dependencies": {
+    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "css-loader": "^0.28.7",
     "vue": "^2.5.13",
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^13.6.1",
-    "vue-style-loader": "^3.0.3"
+    "vue-style-loader": "^3.0.3",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0"
   }
 }
