@@ -33,10 +33,10 @@ compiler.plugin('compilation', function (compilation) {
 app.use(devMiddleware);
 app.use(hotMiddleware);
 
-app.listen(8888,function(err){
+app.listen(8080,function(err){
 	if(err){
 		console.log(err);
 		return;
 	}
-	console.log('Listening at http://localhost:8888');
+	console.log('Listening at http://localhost:8080');
 })
