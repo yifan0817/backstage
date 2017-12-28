@@ -41,7 +41,7 @@ module.exports = {
 			template:path.resolve(__dirname,'../app/index/index.html'),
 			inject:true,
 			options:{
-				Favlist:{
+				Menulist:{
 					loaders:{
 						js:'babel'
 					}
