@@ -1,18 +1,21 @@
 <template>
-	<transition name="slide-fade">
-		<div>{{content}}</div>
-	</transition>
+	<div>
+		<el-button type="success">默认按钮</el-button>
+	</div>
 </template>
 
 <script>
-	const NewsComponent = {
+	import Vue from 'Vue';
+	import { Button, Select } from 'element-ui';
+	Vue.use(Button);
+
+	const LoginComponent = {
 		created(){
-			console.log('News created......');
-			// this.initData();
+			
 		},
 		data(){
 			return {
-				content:'newsnewsnews'
+				content:'loginloginloginlogin'
 			}
 		},
 		methods:{
@@ -22,7 +25,7 @@
 		}
 	};
 
-	export default NewsComponent;
+	export default LoginComponent;
 </script>
 
 <style>

@@ -1,8 +1,12 @@
 import Vue from 'Vue';
 import VueRouter from 'vue-router';
 import Menulist from './components/Menulist.vue';
+import axios from 'axios';
+import './index.css';
 
 // 定义路由组件
+import LoginComponent from './components/LoginComponent.vue';
+import UsersComponent from './components/UsersComponent.vue';
 import NewsComponent from './components/NewsComponent.vue';
 import TopicsComponent from './components/TopicsComponent.vue';
 import MessagesComponent from './components/MessagesComponent.vue';
@@ -10,10 +14,13 @@ import ChatComponent from './components/ChatComponent.vue';
 import SystemComponent from './components/SystemComponent.vue';
 
 Vue.use(VueRouter);
+Vue.prototype.$ajax = axios;
 
 // 定义路由
 const routes = [
-	{ path: '/', redirect: '/news' },
+	{ path: '/', redirect: '/users' },
+	{ path: '/login', component: LoginComponent },
+	{ path: '/users', component: UsersComponent, meta: { requiresAuth: true } },
 	{ path: '/news', component: NewsComponent, meta: { requiresAuth: true } },
 	{ path: '/topics', component: TopicsComponent, meta: { requiresAuth: true } },
 	{ path: '/messages', component: MessagesComponent, meta: { requiresAuth: true } },

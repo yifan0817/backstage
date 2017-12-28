@@ -18,5 +18,5 @@
 
 	};
 
-	module.exports = TopicsComponent;
+	export default TopicsComponent;
 </script>
