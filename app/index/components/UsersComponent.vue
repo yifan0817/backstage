@@ -1,9 +1,11 @@
 <template>
 	<transition name="slide-fade">
 		<div>
-			<el-table :data="usersData" height="250" border style="width: 100%">
-				<el-table-column prop="avatarUrl" label="头像" width="120">
-					<img :src="avatarUrl">
+			<el-table :data="usersData" height="250" border style="width: 100%" v-loading="loading">
+				<el-table-column prop="avatarUrl" label="头像" width="60">
+					 <template slot-scope="scope">
+	                    <img :src="scope.row.avatarUrl" width="40" height="40" class="head_pic"/>
+	                </template>
 				</el-table-column>
 			    <el-table-column prop="username" label="用户名" width="120"></el-table-column>
 			    <el-table-column prop="sex" label="性别" width="120"></el-table-column>
@@ -16,18 +18,19 @@
 
 <script>
 	import Vue from 'Vue';
-	import { Table, TableColumn } from 'element-ui';
+	import { Table, TableColumn, Loading } from 'element-ui';
 	Vue.use(Table);
 	Vue.use(TableColumn);
+	Vue.use(Loading.directive);
 
 	const UsersComponent = {
 		created(){
-			console.log('Users created......');
 			this.initData();
 		},
 		data(){
 			return {
-				usersData:[]
+				loading:true,
+				usersData:[],
 			}
 		},
 		methods:{
@@ -40,6 +43,9 @@
 					if(res.status === 200 && res.data.success){
 						this.usersData = res.data.userData;
 					}
+					this.loading = false;
+				}).catch((e) => {
+					this.loading = false;
 				});
 			}
 		}

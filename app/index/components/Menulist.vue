@@ -1,7 +1,7 @@
 <template id="template-home">
 	<div id="menu-list">
 		<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
-		  <el-menu-item v-for="(item,index) in menuList" :index="''+index" :key="index">
+		  <el-menu-item v-for="(item,index) in menuList" :index="'/'+item" :key="index" router>
 			<router-link :key="item" :to="'/'+item">
 				<div>{{item}}</div>
 			</router-link>

@@ -16,6 +16,9 @@ import SystemComponent from './components/SystemComponent.vue';
 Vue.use(VueRouter);
 Vue.prototype.$ajax = axios;
 
+import { Message } from 'element-ui';
+Vue.prototype.$message = Message
+
 // 定义路由
 const routes = [
 	{ path: '/', redirect: '/users' },
@@ -35,13 +38,17 @@ const router = new VueRouter({
 
 // 全局导航守卫
 router.beforeEach((to,from,next) => {
-	// console.log(to,from);
 	if(to.meta.requiresAuth){
-		console.log('requiresAuth is true!!!');
 		// todo 检查登录情况，未登陆的话重定向至登录页
-
+		// console.log(sessionStorage.userAuth);
+		if(sessionStorage.userAuth){
+			next();
+		}else {
+			next('/login');
+		}
+	}else {
+		next();
 	}
-	next();
 });
 
 // 创建、挂载根实例
