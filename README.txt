@@ -7,3 +7,5 @@ todo:
 路由
 代理
 cookie
+
+跨域
