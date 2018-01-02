@@ -7,7 +7,7 @@
 		},
 		data(){
 			return {
-				content:'topicstopicstopics'
+				content:'还没做啊'
 			}
 		},
 		methods:{

@@ -28,7 +28,7 @@
 			    <el-form-item label="新闻类型">
 			      <el-input v-model="form.type" auto-complete="off"></el-input>
 			    </el-form-item>
-			    <el-form-item label="新闻内容" v-for="(item,index) in form.content">
+			    <el-form-item label="新闻内容" v-for="(item,index) in form.content" :key="index">
 					<el-select v-model="item.type" placeholder="请选择内容类型" style="width: 80px">
 						<el-option label="文本" value="1"></el-option>
 						<el-option label="图片" value="2"></el-option>

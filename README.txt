@@ -2,6 +2,9 @@
 https://www.cnblogs.com/wj204/p/6031435.html
 http://www.cnblogs.com/lhweb15/p/5660609.html
 http://www.cnblogs.com/zuozuo-blog/p/6560475.html
+https://segmentfault.com/a/1190000010198627
+http://element-cn.eleme.io/#/zh-CN/component/custom-theme
+https://segmentfault.com/a/1190000006852262
 
 todo:
 路由
