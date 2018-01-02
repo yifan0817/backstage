@@ -1,7 +1,7 @@
 <template>
 	<transition name="slide-fade">
 		<div>
-			<el-table :data="usersData" height="250" border style="width: 100%" v-loading="loading">
+			<el-table :data="usersData" height="250" border style="width: 90%;margin: 5% auto;" v-loading="loading">
 				<el-table-column prop="avatarUrl" label="头像" width="60">
 					 <template slot-scope="scope">
 	                    <img :src="scope.row.avatarUrl" width="40" height="40" class="head_pic"/>

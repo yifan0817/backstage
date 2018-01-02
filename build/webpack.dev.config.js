@@ -9,20 +9,41 @@ config.output.publicPath = '/';
 
 config.plugins = [
 	new HtmlWebpackPlugin({
-		filename:'app/index/index.html',
-		template:path.resolve(__dirname,'../app/index/index.html'),
-		inject:true,
-		options:{
-			Favlist:{
-				loaders:{
-					js:'babel'
+		filename: 'app/index/index.html',
+		template: path.resolve(__dirname, '../app/index/index.html'),
+		inject: true,
+		options: {
+			Favlist: {
+				loaders: {
+					js: 'babel'
 				}
 			},
 		}
 	}),
 	new webpack.optimize.OccurrenceOrderPlugin(),
 	new webpack.HotModuleReplacementPlugin(),
-	new webpack.NoErrorsPlugin()
+	new webpack.NoEmitOnErrorsPlugin()
 ];
+
+config.devServer = {
+	historyApiFallback: true,
+	hot: true,
+	inline: true,
+	progress: true,
+	port: 8080,
+	host: 'localhost',
+	proxy: {
+		'/myLogin': {
+			target: 'https://www.nwsuaforchestra.cn',
+			changeOrigin: true,
+			secure: false
+		},
+		'/getAllUsers': {
+			target: 'https://www.nwsuaforchestra.cn',
+			changeOrigin: true,
+			secure: false
+		}
+	}
+}
 
 module.exports = config;

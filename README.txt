@@ -12,4 +12,6 @@ cookie
 小程序图片懒加载
 数据库基本数据补充（留言、新闻管理）
 https概念
-表单提交加密 表格业务操作
+
+表单提交加密 https://www.cnblogs.com/souvenir/p/5834260.html
+表格业务操作

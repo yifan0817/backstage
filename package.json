@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --hot --inline --config build/webpack.dev.config.js",
     "build": "webpack --progress --colors --display-modules --display-chunks --config build/webpack.config.js",
     "dev": "node ./build/dev-server.js"
   },
@@ -36,6 +37,7 @@
     "vue-router": "^3.0.1",
     "vue-style-loader": "^3.0.3",
     "vue-template-compiler": "^2.5.13",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
   }
 }
